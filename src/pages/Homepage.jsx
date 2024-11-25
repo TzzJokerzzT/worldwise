@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
-import styles from "./Homepage.module.css";
 import PageNav from "../components/PageNav";
+import styles from "./Homepage.module.css";
 
 export default function Homepage() {
   return (
@@ -8,8 +8,8 @@ export default function Homepage() {
       <PageNav />
       <section>
         <h1>
-          You travel the world.
-          <br />
+          You travel the world. Change something
+         <br />
           WorldWise keeps track of your adventures.
         </h1>
         <h2>
@@ -19,7 +19,7 @@ export default function Homepage() {
         </h2>
         <Link to="/app" className="cta">
           Start tracking Now
-        </Link>
+        </Link>,
       </section>
     </main>
   );

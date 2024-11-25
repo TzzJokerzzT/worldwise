@@ -2,7 +2,6 @@ import { NavLink } from "react-router-dom";
 import styles from "./PageNav.module.css";
 import Logo from "./Logo";
 const PageNav = () => {
-  console.log(styles);
   return (
     <nav className={styles.nav}>
       <Logo />
@@ -17,10 +16,11 @@ const PageNav = () => {
           <NavLink to="/login" className={styles.ctaLink}>
             Login
           </NavLink>
-        </li>
+     </li>
       </ul>
     </nav>
   );
 };
+
 
 export default PageNav;
