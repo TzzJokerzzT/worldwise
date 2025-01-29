@@ -4,13 +4,16 @@ import App from "./App.jsx";
 import "./index.css";
 import { BrowserRouter } from "react-router-dom";
 import { CitiesProvider } from "./context/CitiesProvider.jsx";
+import { AuthProvider } from "./context/FakeAuthContext.jsx";
 
 createRoot(document.getElementById("root")).render(
   <BrowserRouter>
-    <CitiesProvider>
-      <StrictMode>
-        <App />
-      </StrictMode>
-    </CitiesProvider>
-  </BrowserRouter>
+    <AuthProvider>
+      <CitiesProvider>
+        <StrictMode>
+          <App />
+        </StrictMode>
+      </CitiesProvider>
+    </AuthProvider>
+  </BrowserRouter>,
 );

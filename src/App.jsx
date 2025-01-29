@@ -1,6 +1,5 @@
-import { Suspense, lazy } from "react";
+import { Suspense } from "react";
 import { Navigate, Route, Routes } from "react-router-dom";
-import Form from "./components/Form";
 import Spinner from "./components/Spinner";
 import AppLayout from "./pages/AppLayout";
 import HomePage from "./pages/Homepage";
@@ -8,10 +7,7 @@ import Login from "./pages/Login";
 import PageNotFound from "./pages/PageNotFound";
 import Pricing from "./pages/Pricing";
 import Product from "./pages/Product";
-//Lazy Loading Components
-const CityList = lazy(() => import("./components/CityList"));
-const CountryList = lazy(() => import("./components/CountryList"));
-const City = lazy(() => import("./components/City"));
+import { City, CityList, CountryList, Form } from "./routes/lazyComponents";
 
 const App = () => {
   return (
