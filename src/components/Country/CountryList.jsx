@@ -1,8 +1,8 @@
 import { useContext } from "react";
-import { CitiesContext } from "../context/CitiesProvider";
+import { CitiesContext } from "../../context/CitiesProvider";
 import styles from "./CountryList.module.css";
 import CountryItem from "./CountryItem";
-import Message from "./Message";
+import Message from "../Message/Message";
 const CountryList = () => {
   //Context
   const { cities } = useContext(CitiesContext);

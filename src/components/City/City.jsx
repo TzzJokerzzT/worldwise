@@ -1,9 +1,9 @@
 import { useContext, useEffect } from "react";
 import { useParams } from "react-router-dom";
-import { CitiesContext } from "../context/CitiesProvider";
+import { CitiesContext } from "../../context/CitiesProvider";
 import styles from "./City.module.css";
-import Spinner from "./Spinner";
-import ButtonBack from "./ButtonBack";
+import Spinner from "../Spinner/Spinner";
+import ButtonBack from "../Button/ButtonBack";
 
 const City = () => {
   //Context
