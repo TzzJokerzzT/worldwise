@@ -35,6 +35,18 @@
         "lng": 12.496366
       },
       "id": "12345678"
+    },
+    {
+      "id": "be63",
+      "cityName": "Cartagena",
+      "country": "Colombia",
+      "date": "2025-01-29T22:07:12.374Z",
+      "notes": "Ciudad llena de calor y cemento!!!",
+      "emoji": "🇨🇴",
+      "position": {
+        "lat": "10.425689637204096",
+        "lng": "-75.54748535156251"
+      }
     }
   ]
 }
