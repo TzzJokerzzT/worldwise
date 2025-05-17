@@ -1,10 +1,14 @@
 import { NavLink } from "react-router-dom";
 import styles from "./PageNav.module.css";
-import Logo from "./Logo";
-import { useAuth } from "../context/FakeAuthContext";
+import { useAuth } from "../../context/FakeAuthContext";
+import Logo from "../Logo/Logo";
 
 const PageNav = () => {
-  const { isAuthenticated } = useAuth();
+  const { isAuthenticated, logout } = useAuth();
+
+  const handleClick = () => {
+    logout();
+  };
   return (
     <nav className={styles.nav}>
       <Logo />
@@ -16,7 +20,11 @@ const PageNav = () => {
           <NavLink to="/product">Product</NavLink>
         </li>
         <li>
-          <NavLink to="/login" className={styles.ctaLink}>
+          <NavLink
+            to={isAuthenticated ? "" : "/login"}
+            onClick={isAuthenticated ? handleClick : null}
+            className={styles.ctaLink}
+          >
             {isAuthenticated ? "Logout" : "Login"}
           </NavLink>
         </li>

@@ -7,11 +7,11 @@ import {
   useMap,
   useMapEvent,
 } from "react-leaflet";
-import { CitiesContext } from "../context/CitiesProvider";
+import { CitiesContext } from "../../context/CitiesProvider";
 import styles from "./Map.module.css";
-import { useGeolocation } from "../hooks/useGeolocation";
-import { useUrlPosition } from "../hooks/useUrlPosition";
-import Button from "../components/Button";
+import { useGeolocation } from "../../hooks/useGeolocation";
+import { useUrlPosition } from "../../hooks/useUrlPosition";
+import Button from "../Button/Button";
 
 const Map = () => {
   //Constext
@@ -29,7 +29,6 @@ const Map = () => {
   useEffect(() => {
     if (lat && lng) setMapPosition([lat || 40, lng || 0]);
   }, [lat, lng]);
-
   useEffect(() => {
     if (geolocationPosition)
       setMapPosition([geolocationPosition.lat, geolocationPosition.lng]);

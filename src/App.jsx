@@ -1,13 +1,14 @@
 import { Suspense } from "react";
 import { Navigate, Route, Routes } from "react-router-dom";
-import Spinner from "./components/Spinner";
 import AppLayout from "./pages/AppLayout";
 import HomePage from "./pages/Homepage";
 import Login from "./pages/Login";
 import PageNotFound from "./pages/PageNotFound";
 import Pricing from "./pages/Pricing";
 import Product from "./pages/Product";
+import ProtectedRoute from "./pages/ProtectedRoute";
 import { City, CityList, CountryList, Form } from "./routes/lazyComponents";
+import Spinner from "./components/Spinner/Spinner";
 
 const App = () => {
   return (
@@ -17,7 +18,14 @@ const App = () => {
         <Route path="pricing" element={<Pricing />} />
         <Route path="product" element={<Product />} />
         <Route path="login" element={<Login />} />
-        <Route path="app" element={<AppLayout />}>
+        <Route
+          path="app"
+          element={
+            <ProtectedRoute>
+              <AppLayout />
+            </ProtectedRoute>
+          }
+        >
           <Route
             index
             element={

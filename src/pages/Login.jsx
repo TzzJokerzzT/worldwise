@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
-import Button from "../components/Button";
-import PageNav from "../components/PageNav";
+import Button from "../components/Button/Button";
+import PageNav from "../components/PageNav/PageNav";
 import { useAuth } from "../context/FakeAuthContext";
 import styles from "./Login.module.css";
 import { useContext } from "react";

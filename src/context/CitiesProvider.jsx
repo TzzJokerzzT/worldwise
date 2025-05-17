@@ -14,11 +14,17 @@ const initialState = {
 
 const reducer = (state, action) => {
   switch (action.type) {
-    case "city/loaded":
+    case "cities/loaded":
       return {
         ...state,
         isLoading: false,
         cities: action.payload,
+      };
+    case "city/loaded":
+      return {
+        ...state,
+        isLoading: false,
+        currentCity: action.payload,
       };
     case "city/created":
       return {
@@ -31,12 +37,6 @@ const reducer = (state, action) => {
       return {
         ...state,
         cities: state.cities.filter((city) => city.id !== action.payload),
-      };
-    case "city/loaded":
-      return {
-        ...state,
-        isLoading: false,
-        currentCity: action.payload,
       };
     case "loading":
       return {
@@ -69,7 +69,7 @@ export const CitiesProvider = ({ children }) => {
       try {
         const response = await fetch(BASE_URL);
         const data = await response.json();
-        dispatch({ type: "city/loaded", payload: data });
+        dispatch({ type: "cities/loaded", payload: data });
       } catch (err) {
         dispatch({
           type: "rejected",

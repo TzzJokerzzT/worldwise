@@ -1,10 +1,10 @@
 import styles from "./User.module.css";
-import { useAuth } from "../context/FakeAuthContext";
-import { CitiesContext } from "../context/CitiesProvider";
+import { CitiesContext } from "../../context/CitiesProvider";
 import { useContext } from "react";
+import { useAuth } from "../../context/FakeAuthContext";
 
 function User() {
-  const { user, isAuthenticated, logout } = useAuth();
+  const { user, logout } = useAuth();
   const { navigate } = useContext(CitiesContext);
 
   const handleClick = () => {

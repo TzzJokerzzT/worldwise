@@ -2,7 +2,7 @@ import { useContext } from "react";
 import { CitiesContext } from "../context/CitiesProvider";
 import CityItem from "./CityItem";
 import styles from "./CityList.module.css";
-import Message from "./Message";
+import Message from "../Message/Message";
 
 const CityList = () => {
   //Context
